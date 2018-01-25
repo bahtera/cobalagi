@@ -1,0 +1,55 @@
+<div class="col-xs-10">
+  <ol class="breadcrumb">
+      <li>
+          <a routerLink="/">Home</a>
+      </li>
+      <li class="active">accessories</li>
+  </ol>
+  <div class="panel panel-default">
+      <div class="panel-body">
+          <!-- <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let u of produkList2">
+              <div class="thumbnail">
+                  <img style="height: 200px; width: 200px;" src="{{u.gambar}}" class="img-responsive" alt="">
+                  <div class="post-content">
+                      <a [routerLink]="['/detail', u._id]">
+                          <p style="text-align: center; color: black; font-size: 18px; margin-top: 10px;">{{u.nama}}</p>
+                      </a>
+                  </div>
+              </div>
+          </div> -->
+          <div class="panel-body">
+            <table class="table table-striped table-bordered">
+              <tr>
+                <th></th>
+                <th>Judul</th>
+                <th>Kategori</th>
+                <th>Harga</th>
+                <th>Jumlah</th>
+              </tr>
+              
+              <tr *ngFor="let u of produkList2, let i = index">
+      
+                <td>
+                  <img src="{{ u.gambar }}" alt="gambar" class="img-responsive" style="max-height: 100px; max-width: 100px;" >
+                </td>
+                <td>{{ u.nama }}</td>
+                <td>{{ u.kategori }}</td>
+                <td>{{ u.harga }}</td>
+                <td><input type="number" name="" id=""></td>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="DeleteProduk(u.id)" >
+                    <span class="glyphicon glyphicon-trash"></span> Delete
+                  </button>
+                  <!-- <a [routerLink]="['/detail', u._id]">Show Detail</a> -->
+                  <!-- <a [routerLink]="['/resep-edit', u._id]" class="btn btn-success">EDIT</a> -->
+                </td>
+      
+              </tr>
+      
+            </table>
+                <button type="button" class="checkout" (click)="CheckOut()" >CHECK OUT</button>
+          </div>
+          
+      </div>
+  </div>
+</div>
